@@ -1,0 +1,29 @@
+version: 0.0.0
+name: my-function
+namespace: ""
+runtime: node
+registry: ""
+image: ""
+imageDigest: ""
+builder: gcr.io/paketo-buildpacks/builder:0.1.201-base
+builders:
+  base: gcr.io/paketo-buildpacks/builder:0.1.201-base
+  default: gcr.io/paketo-buildpacks/builder:0.1.201-base
+  full: gcr.io/paketo-buildpacks/builder:full
+buildpacks: []
+volumes: []
+buildEnvs: []
+envs: []
+annotations: {}
+options: {}
+labels: []
+healthEndpoints:
+  liveness: /health/liveness
+  readiness: /health/readiness
+created: 2022-03-23T18:54:56.405928-04:00
+build: git                                          # required, specify `git` build type
+git:
+  url: https://github.com/csantanapr/func-demo.git  # required, git repository with the function source code
+  revision: main                                    # optional, git revision to be used (branch, tag, commit)
+  # contextDir: myfunction                          # optional, needed only if the function is not located
+                                                    # in the repository root folder
